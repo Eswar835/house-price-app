@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .summary {
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+        .button-group a {
+            text-decoration: none;
+            padding: 10px 15px;
+            background: #4facfe;
+            color: white;
+            border-radius: 6px;
+            margin: 5px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .button-group a:hover {
+            background: #3793e6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Welcome, {{ user.username }}</h2>
+
+    <div class="summary">
+        <strong>Total Predictions:</strong> {{ total_predictions }}
+    </div>
+
+    <div class="button-group">
+        <a href="{{ url_for('home') }}">Back to Home</a>
+        <a href="{{ url_for('history') }}">History</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</div>
+
+</body>
+</html>

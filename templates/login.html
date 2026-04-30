@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 95%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .register-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>🔐 Login</h2>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </form>
+
+        <p class="register-link">
+            Don't have an account? <a href="/register">Create Account</a>
+        </p>
+    </div>
+</body>
+</html>
